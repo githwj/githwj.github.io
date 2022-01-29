@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>天星项目总结</title>
+    <url>/2021/12/30/%E5%A4%A9%E6%98%9F%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="天星项目总结"><a href="#天星项目总结" class="headerlink" title="天星项目总结"></a>天星项目总结</h1><p>因为是项目后期加入进来，所以主要复制前端代码的修改，整个软件的功能测试以及流程测试，完成后期部分模块功能开发（前后端）</p>
+<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>该项目主要是分为两个部分</p>
+<ol>
+<li><p>客户端<br>客户通过填写信息，进行标准开户和简易开户，以及签署文件</p>
+</li>
+<li><p>管理端<br>柜员审批客户提交信息及材料，通过开户，以及拒绝补充材料信息</p>
+</li>
+</ol>
+<h2 id="技术背景"><a href="#技术背景" class="headerlink" title="技术背景"></a>技术背景</h2><p>改项目是基于公司内部框架的一个分布式微服务的前后端分离项目</p>
+<p>– 因刚接触项目不久对具体用到的技术，了解并不全面，下面只能简单介绍了</p>
+<p>版本控制 git</p>
+<p>数据库 mysql -5.7.35 redis</p>
+<p>后端 Spring框架，maven依赖管理 公司内部EMP平台</p>
+<p>前端 vue+elementUi</p>
+<h2 id="负责功能模块"><a href="#负责功能模块" class="headerlink" title="负责功能模块"></a>负责功能模块</h2><h3 id="其他相关人士签署"><a href="#其他相关人士签署" class="headerlink" title="其他相关人士签署"></a>其他相关人士签署</h3><p>开发流程：</p>
+<ol>
+<li>前期完成业务流程图</li>
+<li>后端接口开发+postman测试</li>
+<li>前端列表、详情页面编写，业务逻辑控制</li>
+<li>前后端接口调试</li>
+</ol>
+<p>功能描述：<br>签署文件完成开户条件，但任有相关人士未签署，需由柜员进行再次审核，是否补充文件，审核所有相关人士都已签署完成后，开户成功，若未满足条件则通知客户签署文件，并加有逾期限制</p>
+<p>功能不足：<br>属于基本的查改功能，主要难点在于后期优化，目前接口比较杂乱，需求后期变动，未在原来的接口进行改造，单独新增接口，完成功能实现</p>
+<h3 id="简易开户-gt-标准开户登录改造"><a href="#简易开户-gt-标准开户登录改造" class="headerlink" title="简易开户=&gt;标准开户登录改造"></a>简易开户=&gt;标准开户登录改造</h3><p>开发流程：</p>
+<ol>
+<li>登录流程梳理，整理共用页面，便于后期页面调整</li>
+<li>前端登录页、注册页编写，otp检验，人机校验</li>
+<li>页面路由跳转整理</li>
+<li>接口调试</li>
+</ol>
+<p>功能描述：<br>基于项目一期简易开户登录，新增标准开户登录，DACO账户注册+登录，登录流程修改</p>
+<p>功能难点：<br>在页面的解耦和复用性难以把控，为满足高复用，一定程度上导致页面耦合度提高（优点页面布局调整更为简单，缺点流程变更会导致不易维护）</p>
+<p>考虑因素：项目是双语系统，过多的页面对导致项目整体偏大，代码重复，后期页面语言调整不易</p>
+<h3 id="一期项目bug修复"><a href="#一期项目bug修复" class="headerlink" title="一期项目bug修复"></a>一期项目bug修复</h3>]]></content>
+      <categories>
+        <category>work</category>
+      </categories>
+      <tags>
+        <tag>项目总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js字符串处理</title>
+    <url>/2021/12/04/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="字母大小写转换"><a href="#字母大小写转换" class="headerlink" title="字母大小写转换"></a>字母大小写转换</h1><p>小写转大写</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> strVariable = <span class="string">&quot;DOBI_autograph_status&quot;</span>;</span><br><span class="line">strVariable = strVariable.toLocaleUpperCase ( );</span><br><span class="line"><span class="keyword">var</span> strVariable = <span class="string">&quot;DOBI_autograph_status&quot;</span>;</span><br><span class="line">strVariable = strVariable.toUpperCase ( );</span><br></pre></td></tr></table></figure>
+<p>大写转小写</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> strVariable = <span class="string">&quot;DOBI_autograph_status&quot;</span>;</span><br><span class="line">strVariable = strVariable.toLocaleLowerCase ( );</span><br><span class="line"><span class="keyword">var</span> strVariable = <span class="string">&quot;DOBI_autograph_status&quot;</span>;</span><br><span class="line">strVariable = strVariable.toLowerCase ( );</span><br></pre></td></tr></table></figure>
+
+<h1 id="字符串是否包含特定字符"><a href="#字符串是否包含特定字符" class="headerlink" title="字符串是否包含特定字符"></a>字符串是否包含特定字符</h1><ol>
+<li><p>某个指定的子字符串在字符串中第一次出现的位置</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str1=str.indexOf(<span class="string">&quot;o&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> str2=str.indexOf(<span class="string">&quot;world&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> str3=str.indexOf(<span class="string">&quot;o&quot;</span>,str1+<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">//4 默认只找第一个关键字位置，从下标0开始查找</span></span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">//-1 没有找到</span></span><br><span class="line"><span class="built_in">console</span>.log(str3); <span class="comment">//7</span></span><br></pre></td></tr></table></figure></li>
+<li><p>返回某个指定的子字符串在字符串中最后出现的位置</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str1=str.lastIndexOf(<span class="string">&quot;o&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> str2=str.lastIndexOf(<span class="string">&quot;world&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> str3=str.lastIndexOf(<span class="string">&quot;o&quot;</span>,str1-<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">//7</span></span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">//-1</span></span><br><span class="line"><span class="built_in">console</span>.log(str3); <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+<p><code>1</code>和<code>2</code>对大小写敏感，如果子字符串没有找到，返回-1。第二个参数表示从哪个下标开始查找，没有写则默认从下标0开始查找</p>
+</li>
+<li><p><code>match()</code>: 返回所有查找的关键字内容的数组</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;To be or not to be&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/to/ig</span>; <span class="comment">//to为要查找的关键字，不能加引号，否则查找不生效，i忽略大小写，g表示全局查找。</span></span><br><span class="line"><span class="keyword">var</span> str1=str.match(reg);</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">//[&quot;To&quot;, &quot;to&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(<span class="string">&quot;Hello&quot;</span>)); <span class="comment">//null</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h1><ol>
+<li><code>slice()</code>: 返回字符串中提取的子字符串<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str1=str.slice(<span class="number">2</span>); <span class="comment">//如果只有一个参数，则提取开始下标到结尾处的所有字符串</span></span><br><span class="line"><span class="keyword">var</span> str2=str.slice(<span class="number">2</span>,<span class="number">7</span>); <span class="comment">//两个参数，提取下标为2，到下标为7但不包含下标为7的字符串</span></span><br><span class="line"><span class="keyword">var</span> str3=str.slice(-<span class="number">7</span>,-<span class="number">2</span>); <span class="comment">//如果是负数，-1为字符串的最后一个字符。提取从下标-7开始到下标-2但不包含下标-2的字符串。前一个数要小于后一个数，否则返回空字符串</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">//llo World</span></span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">//llo W</span></span><br><span class="line"><span class="built_in">console</span>.log(str3); <span class="comment">//o Wor</span></span><br></pre></td></tr></table></figure></li>
+<li><code>substring()</code>: 提取字符串中介于两个指定下标之间的字符<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str1=str.substring(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">var</span> str2=str.substring(<span class="number">2</span>,<span class="number">2</span>);</span><br><span class="line"><span class="keyword">var</span> str3=str.substring(<span class="number">2</span>,<span class="number">7</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">//llo World</span></span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">//如果两个参数相等，返回长度为0的空串</span></span><br><span class="line"><span class="built_in">console</span>.log(str3); <span class="comment">//llo W</span></span><br></pre></td></tr></table></figure></li>
+<li><code>substr()</code>: 返回从指定下标开始指定长度的的子字符串<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str1=str.substr(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">var</span> str2=str.substr(<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">var</span> str3=str.substr(-<span class="number">3</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">//ello World</span></span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">//ell</span></span><br><span class="line"><span class="built_in">console</span>.log(str3); <span class="comment">//rl</span></span><br></pre></td></tr></table></figure>
+如果没有指定length,返回从下标开始处结尾处的所有字符串</li>
+</ol>
+<h1 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h1><p><code>split()</code>: 把字符串分割成字符串数组</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;AA BB CC DD&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> string1=<span class="string">&quot;1:2:3:4:5&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str1=str.split(<span class="string">&quot;&quot;</span>);<span class="comment">//如果把空字符串 (&quot;&quot;)用作分割符，那么字符串的每个字符之间都会被分割</span></span><br><span class="line"><span class="keyword">var</span> str2=str.split(<span class="string">&quot; &quot;</span>); <span class="comment">//以空格为分隔符</span></span><br><span class="line"><span class="keyword">var</span> str3=str.split(<span class="string">&quot;&quot;</span>,<span class="number">4</span>); <span class="comment">//4指定返回数组的最大长度</span></span><br><span class="line"><span class="keyword">var</span> str4=string1.split(<span class="string">&quot;:&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">// [&quot;A&quot;, &quot;A&quot;, &quot; &quot;, &quot;B&quot;, &quot;B&quot;, &quot; &quot;, &quot;C&quot;, &quot;C&quot;, &quot; &quot;, &quot;D&quot;, &quot;D&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">//[&quot;AA&quot; &quot;BB&quot; &quot;CC&quot; &quot;DD&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(str3); <span class="comment">//[&quot;A&quot;, &quot;A&quot;, &quot; &quot;, &quot;B&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(str4); <span class="comment">// [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</span></span><br></pre></td></tr></table></figure>
+<h1 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h1><p><code>replace()</code>: 在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;hello WORLD&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/o/ig</span>; <span class="comment">//o为要替换的关键字，不能加引号，否则替换不生效，i忽略大小写，g表示全局查找。</span></span><br><span class="line"><span class="keyword">var</span> str1=str.replace(reg,<span class="string">&quot;**&quot;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">//hell** W**RLD</span></span><br></pre></td></tr></table></figure>
+<p><code>trim()</code>: 去掉首尾空格</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot; hello WORLD &quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str1=str.trim()</span><br><span class="line"><span class="built_in">console</span>.log(str1); <span class="comment">//hello WORLD</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="字符字节转换"><a href="#字符字节转换" class="headerlink" title="字符字节转换"></a>字符字节转换</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fieldValue = <span class="string">&quot;水泥地你发你若非卡佛&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> inputLength = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>;i &lt; fieldValue.length ; i++)&#123;</span><br><span class="line">	<span class="keyword">if</span> (fieldValue.charCodeAt(i) &lt;= <span class="built_in">parseInt</span> (<span class="string">&quot;0x7F&quot;</span>) )&#123;</span><br><span class="line">		inputLength += <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (fieldValue.charCodeAt(i) &lt;= <span class="built_in">parseInt</span> (<span class="string">&quot;0x7FF&quot;</span>))&#123;</span><br><span class="line">		inputLength += <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (fieldValue.charCodeAt(i) &lt;= <span class="built_in">parseInt</span>(<span class="string">&quot;0xFFFF&quot;</span> ))&#123; <span class="comment">// 中文</span></span><br><span class="line">		inputLength += <span class="number">3</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (fieldValue.charCodeAt(i) &lt;= <span class="built_in">parseInt</span>(<span class="string">&quot;0x1FFFFF&quot;</span> ))&#123;</span><br><span class="line">		inputLength += <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (fieldValue.charCodeAt(i) &lt;= <span class="built_in">parseInt</span>(<span class="string">&quot;0x3FFFFFF&quot;</span> ))&#123;</span><br><span class="line">		inputLength += <span class="number">5</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		inputLength += <span class="number">6</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> s = <span class="built_in">this</span>.$store.state.tagsView.visitedViews</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index = <span class="number">0</span>; index &lt;s.length; index++)&#123;</span><br><span class="line">	<span class="keyword">const</span> element = s[index];</span><br><span class="line">	<span class="keyword">if</span>(<span class="string">&#x27;AccoutnDetail&#x27;</span> === element.name) &#123;</span><br><span class="line">		element.query.applicatoionState = row.applicatoionState</span><br><span class="line">		element.query.dobiId = row.dobiId</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>js整理</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>培训总结</title>
     <url>/2021/12/03/%E5%9F%B9%E8%AE%AD%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h1 id="1-你认为培训目的是什么？"><a href="#1-你认为培训目的是什么？" class="headerlink" title="1.你认为培训目的是什么？"></a>1.你认为培训目的是什么？</h1><p>个人认为培训的目的主要有两个方面</p>
@@ -37,6 +122,25 @@
 <li>Dribbble</li>
 </ul>
 <h2 id="2021年11月27日"><a href="#2021年11月27日" class="headerlink" title="2021年11月27日"></a>2021年11月27日</h2><h3 id="摘抄"><a href="#摘抄" class="headerlink" title="摘抄"></a>摘抄</h3><h4 id="web-性能优化"><a href="#web-性能优化" class="headerlink" title="web 性能优化"></a>web 性能优化</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">•压缩源码和图片</span><br><span class="line">JavaScript文件源代码可以采用混淆压缩的方式，CSS文件源代码进行普通压缩，JPG图片可以根据具体质量来压缩为50%到70%, PNG可以使用一些开源压缩软件来压缩，比如24色变成8色、去掉一些PNG格式信息等。</span><br><span class="line"></span><br><span class="line">•选择合适的图片格式</span><br><span class="line">如果图片颜色数较多就使用JPG格式，如果图片颜色数较少就使用PNG格式，如果能够通过服务器端判断浏览器支持WebP，那么就使用WebP格式和SVG格式。</span><br><span class="line"></span><br><span class="line">•合并静态资源</span><br><span class="line">包括CSS、JavaScript和小图片，减少HTTP请求。</span><br><span class="line"></span><br><span class="line">•开启服务器端的Gzip压缩</span><br><span class="line">这对文本资源非常有效，对图片资源则没那么大的压缩比率。</span><br><span class="line"></span><br><span class="line">•使用CDN</span><br><span class="line">或者一些公开库使用第三方提供的静态资源地址（比如jQuery、normalize.css）。一方面增加并发下载量，另一方面能够和其他网站共享缓存。</span><br><span class="line"></span><br><span class="line">•延长静态资源缓存时间</span><br><span class="line">这样，频繁访问网站的访客就能够更快地访问。不过，这里要通过修改文件名的方式，确保在资源更新的时候，用户会拉取到最新的内容。</span><br><span class="line"></span><br><span class="line">•把CSS放在页面头部，把JavaScript放在页面底部</span><br><span class="line">这样就不会阻塞页面渲染，让页面出现长时间的空白。每一个条目都可以进一步深层挖掘下去。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p>设计模式的关注点</p>
+<ul>
+<li>高效编写代码</li>
+<li>高可复用性</li>
+<li>抽象带来的可读性</li>
+</ul>
+<p>面向对象 软件设计模式分为三大类：创建型模式、结构型模式、行为模式。</p>
+<h3 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h3><p>创建型模式将创建对象的过程进行了封装，作为客户程序仅仅需要去使用对象，而不再关心创建对象过程中的逻辑。</p>
+<p>单例模式 ( Singlenton ) ，就是一种常见的创建型模式</p>
+<p>javaScript中的例子</p>
+<p>需求说明：<br>当用户点击网址的登录按钮，弹出输入框，同时背景出现半透明的黑色遮罩</p>
+<p>生成黑色遮罩的代码</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&#x27;button&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> mask = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.body.appendChild(<span class="built_in">document</span>.createElement(div));</span><br><span class="line">  &#125;</span><br><span class="line">  mask.show();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>问题：<br>每次点击会创建一个全新的DIV节点。希望整个页面最多一个半透明节点，需要每次删掉这个节点，显然不合理。</p>
+<p>方案：<br>利用单例模式，创建前先检测是否已经存在遮罩节点，存在就直接使用，不存在就创建。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> createMask = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> mask;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mask || (mask = <span class="built_in">document</span>.body.appendChild(<span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>)));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
 
 <h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3>]]></content>
       <categories>
