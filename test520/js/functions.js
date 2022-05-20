@@ -94,8 +94,13 @@ function startHeartAnimation() {
 
 function timeElapse(date){
 	var current = Date();
+	// var a = getDaysBetween('2021-10-17','2022-05-20')
 	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
-	var days = Math.floor(seconds / (3600 * 24));
+	// var days = Math.floor(seconds / (3600 * 24));
+	// var days = getDaysBetween(formatDate(date),formatDate(current))
+	var a = formatDate(date)
+	var b = formatDate(current)
+	var days = getDaysBetween('2021-10-17','2022-05-20')
 	seconds = seconds % (3600 * 24);
 	var hours = Math.floor(seconds / 3600);
 	if (hours < 10) {
@@ -133,4 +138,24 @@ function adjustCodePosition() {
 
 function showLoveU() {
 	$('#loveu').fadeIn(3000);
+}
+
+function getDaysBetween(startDate, enDate) {
+  const sDate = Date.parse(startDate)
+  const eDate = Date.parse(enDate)
+  if (sDate > eDate) return 0    //开始日期大于结束日期，返回0
+  if (sDate === eDate) return 1  //如果日期相同 返回一天
+  return (eDate - sDate) / (1 * 24 * 60 * 60 * 1000)
+}
+
+function formatDate(date) {
+  var d = new Date(date),
+    month = '' + (d.getMonth() + 1),
+    day = '' + d.getDate(),
+    year = d.getFullYear();
+
+  if (month.length < 2) month = '0' + month;
+  if (day.length < 2) day = '0' + day;
+
+  return [year, month, day].join('-');
 }
