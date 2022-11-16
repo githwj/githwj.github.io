@@ -775,7 +775,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-07 20:38:15" itemprop="dateModified" datetime="2022-03-07T20:38:15+08:00">2022-03-07</time>
+                <time title="修改时间：2022-06-30 21:24:13" itemprop="dateModified" datetime="2022-06-30T21:24:13+08:00">2022-06-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -798,15 +798,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          The article has been encrypted, please enter your password to view.<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/30/%E5%A4%A9%E6%98%9F%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="天星项目总结"><a href="#天星项目总结" class="headerlink" title="天星项目总结"></a>天星项目总结</h1><p>因为是项目后期加入进来，所以主要复制前端代码的修改，整个软件的功能测试以及流程测试，完成后期部分模块功能开发（前后端）</p>
+<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>该项目主要是分为两个部分</p>
+<ol>
+<li><p>客户端<br>客户通过填写信息，进行标准开户和简易开户，以及签署文件</p>
+</li>
+<li><p>管理端<br>柜员审批客户提交信息及材料，通过开户，以及拒绝补充材料信息</p>
+</li>
+</ol>
+<h2 id="技术背景"><a href="#技术背景" class="headerlink" title="技术背景"></a>技术背景</h2><p>改项目是基于公司内部框架的一个分布式微服务的前后端分离项目</p>
+<p>– 因刚接触项目不久对具体用到的技术，了解并不全面，下面只能简单介绍了</p>
+<p>版本控制 git</p>
+<p>数据库 mysql -5.7.35 redis</p>
+<p>后端 Spring框架，maven依赖管理 公司内部EMP平台</p>
+<p>前端 vue+elementUi</p>
+<h2 id="负责功能模块"><a href="#负责功能模块" class="headerlink" title="负责功能模块"></a>负责功能模块</h2><h3 id="其他相关人士签署"><a href="#其他相关人士签署" class="headerlink" title="其他相关人士签署"></a>其他相关人士签署</h3><p>开发流程：</p>
+<ol>
+<li>前期完成业务流程图</li>
+<li>后端接口开发+postman测试</li>
+<li>前端列表、详情页面编写，业务逻辑控制</li>
+<li>前后端接口调试</li>
+</ol>
+<p>功能描述：<br>签署文件完成开户条件，但任有相关人士未签署，需由柜员进行再次审核，是否补充文件，审核所有相关人士都已签署完成后，开户成功，若未满足条件则通知客户签署文件，并加有逾期限制</p>
+<p>功能不足：<br>属于基本的查改功能，主要难点在于后期优化，目前接口比较杂乱，需求后期变动，未在原来的接口进行改造，单独新增接口，完成功能实现</p>
+<h3 id="简易开户-gt-标准开户登录改造"><a href="#简易开户-gt-标准开户登录改造" class="headerlink" title="简易开户=&gt;标准开户登录改造"></a>简易开户=&gt;标准开户登录改造</h3><p>开发流程：</p>
+<ol>
+<li>登录流程梳理，整理共用页面，便于后期页面调整</li>
+<li>前端登录页、注册页编写，otp检验，人机校验</li>
+<li>页面路由跳转整理</li>
+<li>接口调试</li>
+</ol>
+<p>功能描述：<br>基于项目一期简易开户登录，新增标准开户登录，DACO账户注册+登录，登录流程修改</p>
+<p>功能难点：<br>在页面的解耦和复用性难以把控，为满足高复用，一定程度上导致页面耦合度提高（优点页面布局调整更为简单，缺点流程变更会导致不易维护）</p>
+<p>考虑因素：项目是双语系统，过多的页面对导致项目整体偏大，代码重复，后期页面语言调整不易</p>
+<h3 id="一期项目bug修复"><a href="#一期项目bug修复" class="headerlink" title="一期项目bug修复"></a>一期项目bug修复</h3>
       
     </div>
 
